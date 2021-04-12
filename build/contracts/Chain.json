@@ -1,0 +1,231 @@
+{
+  "contractName": "Chain",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "taskCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"taskCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/HARSH VASHISTHA/Desktop/Dapp_chain/contracts/Chain.sol\":\"Chain\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/HARSH VASHISTHA/Desktop/Dapp_chain/contracts/Chain.sol\":{\"keccak256\":\"0x7860c8d25bf0711485b54520fc4d5014a3a98791c5e66b7b3ad4574efaecbdad\",\"urls\":[\"bzz-raw://3c179a7c6c341a7db47b26fb706f2a2d83e7b1b02e7fc2d41794563fab35497d\",\"dweb:/ipfs/QmUDtmRy6Nvs78jonPqMMGjBKLzZCa4vWmqtuuUhg8tGYg\"]}},\"version\":1}",
+  "bytecode": "0x608060405260008055348015601357600080fd5b506084806100226000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063b6cb58a514602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000548156fea265627a7a72315820ac1b9ee2d3f4f69347312eea49ec2d695cc4f4874675dd7c6f42df2c855c7dc664736f6c63430005100032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063b6cb58a514602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000548156fea265627a7a72315820ac1b9ee2d3f4f69347312eea49ec2d695cc4f4874675dd7c6f42df2c855c7dc664736f6c63430005100032",
+  "sourceMap": "68:54:0:-;;;111:1;89:23;;68:54;8:9:-1;5:2;;;30:1;27;20:12;5:2;68:54:0;;;;;;;",
+  "deployedSourceMap": "68:54:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;68:54:0;;;;;;;;;;;;;;;;;;;89:23;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.0 <0.9.0;\r\n\r\ncontract Chain{\r\n    uint public taskCount=0;\r\n    \r\n}",
+  "sourcePath": "C:/Users/HARSH VASHISTHA/Desktop/Dapp_chain/contracts/Chain.sol",
+  "ast": {
+    "absolutePath": "/C/Users/HARSH VASHISTHA/Desktop/Dapp_chain/contracts/Chain.sol",
+    "exportedSymbols": {
+      "Chain": [
+        5
+      ]
+    },
+    "id": 6,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5,
+        "linearizedBaseContracts": [
+          5
+        ],
+        "name": "Chain",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "name": "taskCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 5,
+            "src": "89:23:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "89:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 3,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "111:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          }
+        ],
+        "scope": 6,
+        "src": "68:54:0"
+      }
+    ],
+    "src": "33:89:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/C/Users/HARSH VASHISTHA/Desktop/Dapp_chain/contracts/Chain.sol",
+      "exportedSymbols": {
+        "Chain": [
+          5
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".0",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "33:31:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            5
+          ],
+          "name": "Chain",
+          "scope": 6
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "taskCount",
+              "scope": 5,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 2,
+                "name": "ElementaryTypeName",
+                "src": "89:4:0"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "30",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 0",
+                  "value": "0"
+                },
+                "id": 3,
+                "name": "Literal",
+                "src": "111:1:0"
+              }
+            ],
+            "id": 4,
+            "name": "VariableDeclaration",
+            "src": "89:23:0"
+          }
+        ],
+        "id": 5,
+        "name": "ContractDefinition",
+        "src": "68:54:0"
+      }
+    ],
+    "id": 6,
+    "name": "SourceUnit",
+    "src": "33:89:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xd3dfB9531Cf087e85e2634D5b84D31ee434627E3",
+      "transactionHash": "0xe97c03bacb05312e30232bb5a028ed603dc3a847af2673859f0f8c09538aa120"
+    }
+  },
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-04-12T10:34:29.949Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
