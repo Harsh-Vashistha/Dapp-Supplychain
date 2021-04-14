@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.0 <0.9.0;
+pragma experimental ABIEncoderV2;
+
 
 contract Chain{
     uint public productCount = 0;
@@ -79,7 +81,6 @@ contract Chain{
         emit addProductCompleted(_id, _productName, _location);
 
     }
-
     
     /*
     scan item to store whereabouts of the product and change the owner of the product
@@ -98,7 +99,9 @@ contract Chain{
 
         emit transferOwnerCompleted(_id, _location);
     }
-    
+    function getownerHistory(uint _id) public view returns( OwnerDetails[] memory){
+        return itemOwnerHistory[_id];
+    }
 /*
     function to return all whereabouts of the product with product-id _id
  */
