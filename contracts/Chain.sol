@@ -13,37 +13,48 @@ contract Chain{
     owner - It is of type address that represent account of owner that uniqely identifies the user
     location - stores the location of the item at a particular stage of supply chain
 */
+    // struct Date{
+    //     uint day;
+    //     uint month;
+    //     uint year;
+    // }
 
     struct Item{
         uint id;
         uint ownerCount;
         string productName;
+        string expiry;
+        string manufacture;
+        string location;
     }
 
     struct OwnerDetails{
         address owner;
-        string location;
+        // string name;
+        // string owner_type;
+        string purchaseDate;
     }
 /* itemArray stores history of a product */
     mapping(uint => Item) public itemDetails;
     mapping(uint => OwnerDetails[]) public itemOwnerHistory;
-
     mapping (uint => address) public itemCurrentOwner;
 
     event addProductCompleted(
         uint _id,
         string _productName,
+        string _manufacture,
+        string expiry,
         string _location
     );
 
     event transferOwnerCompleted(
         uint _id,
-        string _location
+        address _buyeraddress
     );
 
     constructor() public{
         //owner =msg.sender;
-        addProduct(0,"first product",'delhi');
+        addProduct(0,"first product","1-1-2021","1-1-2021",'delhi');
     }
 
 /*
@@ -63,7 +74,7 @@ contract Chain{
 */
 
 //add address _owner arg 
-    function addProduct(uint _id,string memory _productName,string memory _location) public returns(bool) {
+    function addProduct(uint _id,string memory _productName,string memory _manufacture,string memory _expiry,string memory _location) public returns(bool) {
 
         if(productExists(_id)){
             
@@ -71,38 +82,49 @@ contract Chain{
         }
         itemCurrentOwner[_id]=msg.sender;
         productCount++;
-        itemDetails[_id]=Item(_id,0,_productName);
+        itemDetails[_id]=Item(_id,0/*ownercount */,_productName,_expiry,_manufacture,_location);
         
         itemDetails[_id].ownerCount++; // increase the count of owners of a product
 
-        OwnerDetails memory a=OwnerDetails(msg.sender,_location);
+        OwnerDetails memory a=OwnerDetails(msg.sender,_manufacture);
         itemOwnerHistory[_id].push(a);
 
-        emit addProductCompleted(_id, _productName, _location);
+        emit addProductCompleted(_id, _productName, _manufacture ,_expiry,_location);
 
     }
     
-    /*
+    
+/*
     scan item to store whereabouts of the product and change the owner of the product
-    */
-    function transferOwner(uint _id,string memory _location) public returns(bool){
+*/
+    function transferOwner(uint _id, address _buyeraddress,string memory _purchaseDate) public returns(string memory){
         //id of the shipment scanned usign QR code
-        if(msg.sender==itemCurrentOwner[_id]){
+       
+        if(msg.sender!=itemCurrentOwner[_id] ){
             //item is already owner of the item
-            return false;
+            return "cannot checkout you are not the owner";
+        }
+        else if( msg.sender==itemCurrentOwner[_id]){
+            itemCurrentOwner[_id]=_buyeraddress;
+            OwnerDetails memory a=OwnerDetails(_buyeraddress,_purchaseDate);
+            itemOwnerHistory[_id].push(a);
+            emit transferOwnerCompleted(_id, _buyeraddress);
         }
 
-        itemCurrentOwner[_id]=msg.sender;
-
-        OwnerDetails memory a=OwnerDetails(msg.sender,_location);
-        itemOwnerHistory[_id].push(a);
-
-        emit transferOwnerCompleted(_id, _location);
     }
+
+
+/*
+    function to return all whereabouts of the product with product-id _id
+*/
     function getownerHistory(uint _id) public view returns( OwnerDetails[] memory){
         return itemOwnerHistory[_id];
     }
 /*
-    function to return all whereabouts of the product with product-id _id
- */
+    function to return details of a product
+*/
+    function getPorductDetails(uint _id) public view returns( Item memory){
+        return itemDetails[_id];
+    }
+
 }
