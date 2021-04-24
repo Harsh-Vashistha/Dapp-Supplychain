@@ -1,4 +1,0 @@
-list tasks in the smart contract
-list tasks in the console
-list tasks in the client side application
-list tasks in the tests
